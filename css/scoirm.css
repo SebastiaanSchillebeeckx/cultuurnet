@@ -1,0 +1,163 @@
+/* CSS Document */
+
+	html{ width: 100%; height: 100%;}
+
+	body{ 
+		background:color:white;
+		width: 100%;
+		height: 100%;
+		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	}
+	
+	.topHeader{
+		background-color: #f2f2f2;
+		border-bottom:3px solid #000;
+		}
+	.topHeader img{
+		display: block;   
+		margin-left:auto;   
+		margin-right:auto;
+		margin-bottom:3%;
+		padding-top:3%;
+		}
+		
+	#tabel{margin-top:5%;}
+	
+	.btn-big{float:right;}
+	
+	#head{margin-left:30%; margin-top:5%;}
+	
+	#form{margin-left:30%;}
+	
+	#famHead{margin-top:5%;margin-left:15%;}
+	
+	#titels{margin-left:15%;}
+	/*h3{border-bottom: 2px solid #000000;}*/
+	
+	#formulier{margin-top:5%;margin-left:15%; margin-right:15%}
+	
+	#meerInfo{padding-right:15%; border-bottom:1px solid black;}
+	#meerInfo form select{float:right;}
+	
+	a{text-decoration:none; color:black;}
+
+	#voorstel a{
+		text-decoration:none;
+		color:white;
+		background-color:black; 
+		padding-left:3px; 
+		padding-right:3px; 
+		}
+	#voorstel a:hover{
+		text-decoration:none; color:red;
+		}
+	
+	#tabel{margin-left:15%; margin-right:10%;}
+	#tabel a{text-decoration:none; color:black;}
+	
+	#lijstEvents{margin-left:15%;}
+	#lijstEvents a{text-decoration:none; color:white;}
+	#lijstEvents a:hover{text-decoration:none; color:red;}
+	#detailEvents{margin-right:20%;}
+	#detailEvents a{text-decoration:none; color:black;}
+	
+	#contentEvents li{border-bottom:1px solid black; list-style-type:none; margin-right:25%;}
+	#contentEvents a{float:right; background-color:black; padding-left:3px; padding-right:3px;}
+		
+	#profielInfo{float:right; padding-right:15%;}
+	
+	.nav-tabs{margin-left:15%;margin-right:20%;}
+	
+	#aanmelden{margin-top:5%; margin-left:8%;}
+	#aanmelden a{text-decoration:none; color:black;}
+	#aanmelden a:hover{color:red;}
+	
+	#aanmeldenEmail{float:right; margin-top:2%; margin-right:2%;}
+	#aanmeldenEmail a{text-decoration:none; color:black;}
+	#aanmeldenEmail a:hover{color:red;}	#registratie{margin-left:25%; margin-top:5%;}
+	
+	#login{margin-left:25%; margin-top:5%;}
+	
+	#voorsteller h3{float:left;}
+	#voorsteller button{float:right; margin-right:5%;}
+	
+	#klik{display:none; float:right; margin-right:5%;}
+	#klik span{display:none;}
+	
+	.gebruikersInfo{margin-left:5%;}
+	
+	#homeTekst{
+		color:black;
+		margin-right:8%;
+		margin-left:8%;
+		margin-top:5%;	
+		}
+	
+	.welkom{
+		margin-left:15%;
+		margin-top:2%;
+		}
+	.afmelden{
+		float:right;
+		margin-right:2%;
+		margin-top:2%;
+		}
+
+    .afKnop {
+         
+	    -moz-box-shadow:inset 0px 1px 0px 0px #54a3f7;
+        -webkit-box-shadow:inset 0px 1px 0px 0px #54a3f7;
+        box-shadow:inset 0px 1px 0px 0px #54a3f7;
+        
+        background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #007dc1), color-stop(1, #0061a7));
+        background:-moz-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+        background:-webkit-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+        background:-o-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+        background:-ms-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+        background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007dc1', endColorstr='#0061a7',GradientType=0);
+        
+        background-color:#007dc1;
+		color:white;
+        
+        -moz-border-radius:3px;
+        -webkit-border-radius:3px;
+        border-radius:3px;
+        
+        border:1px solid #124d77;
+        
+        display:inline-block;
+        color:#ffffff;
+        font-family:arial;
+        font-size:16px;
+        font-weight:normal;
+        padding:6px 18px;
+        text-decoration:none;
+        
+        text-shadow:0px 1px 0px #154682;
+		      
+    }
+    .afKnop:hover {
+        
+        background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1));
+        background:-moz-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+        background:-webkit-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+        background:-o-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+        background:-ms-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+        background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1',GradientType=0);
+		color:white;       
+
+        background-color:#0061a7;
+    }
+    .afKnop:active {
+        position:relative;
+        top:1px;
+    }
+
+	footer{
+		text-align:center;
+		font-size:12px;
+		padding-top:5%;
+		}
+

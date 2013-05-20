@@ -1,3 +1,3 @@
-<header>
-    <img src="img/headerImg.png"/>
+<header class="topHeader">
+	<img src="img/headery.png"/>
 </header>

@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="css/master.css" media="all">	
     <link rel="stylesheet" href="css/kube.min.css" media="all">
     <link rel="stylesheet" href="css/kube.css" media="all">
-    <link rel="stylesheet" href="css/kuk.css" media="all">
+	<link rel="stylesheet" href="css/search.css" type="text/css" />
+    <link rel="stylesheet" href="css/scoirm.css" media="all">
+    
+    <script type="text/javascript" src="liveSearch/custom.js"></script>
+
     
 </head>
 
@@ -15,8 +19,6 @@
 
 	<?php include_once("include_header.php") ?>
     
-    <button class="btn-big">Afmelden</button>
-
       <div id="formulier">
        <form method="post" action="addGroup/data.php" class="forms">
             <ul>
@@ -24,17 +26,20 @@
                     <label class="bold">1. Geef een naam</label>
                     <input name="groepnaam" type="text" required/>
                 </li>
+                <br>
                 <li>
                     <label class="bold">2. Geef een korte beschrijving</label>
                     <textarea name="info" rows="4" class="width-100" style="height: 100px;">
                     </textarea>
                 </li>
+                <br>
                 <li>
                 <label class="bold">3. Nodig mensen uit</label>
-                <span class="btn-group">
-                	<input type="text" name="foo" class="input-search" />
-                	<button class="btn btn-round">Zoek mensen</button>
-            	</span>
+                    <span class="btn-group">
+                        <input type="text" name="foo" class="input-search" id="search" autocomplete="off"/>
+                        <h4 id="results-text">Geef resultaten voor: <b id="search-string">Array</b></h4>
+                        <ul id="results"></ul>
+                    </span>
                 <br>
                 <br>
                 <br>

@@ -3,3 +3,15 @@ http://imperavi.com/kube/
 http://www.jonwelshdesigns.co/php/formdata-database
 
 http://www.jonwelshdesigns.co/php/retrieving-data
+
+http://artatm.com/2012/08/tutorial-integrate-database-based-facebook-connect-to-your-website/
+
+http://blog.ninetofive.me/blog/build-a-live-search-with-ajax-php-and-mysql/
+
+http://www.w3schools.com/PHP/php_ajax_livesearch.asp
+
+http://www.phpacademy.org
+
+http://www.w3schools.com
+
+http://www.bestcssbuttongenerator.com/

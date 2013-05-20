@@ -1,27 +1,38 @@
 <?php
 
 	session_start();
-	include 		"fbLogin/fbConnection/common.php";
-	include_once 	"fbLogin/fbConnection/fbconnect.php";
+	include 		"Login/fbConnection/common.php";
+	include_once 	"Login/fbConnection/fbconnect.php";
 
-	require_once 	"addGroup/add.php";
+	require_once 	"config/config.php";
 
 	// Via deze query roepen we de groepsnaam op uit de database
 	$query = "SELECT CONCAT(groepnaam) 
 	AS name FROM groepen";
 	$result = @mysql_query ($query)
-
-?><!doctype html>
+	
+?>
+<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Familie Uit ID - Groeps Pagina</title>
 
+	<link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
+
     <link rel="stylesheet" href="css/master.css" media="all">	
     <link rel="stylesheet" href="css/kube.min.css" media="all">
     <link rel="stylesheet" href="css/kube.css" media="all">
-    <link rel="stylesheet" href="css/kuk.css" media="all">
+    <link rel="stylesheet" href="css/scoirm.css" media="all">
+    
+    <script>
+		function addKalender(){
+		document.getElementById("add").innerHTML="Iron Man 3";
+	}
+	</script>
 
 </head>
 
@@ -33,9 +44,9 @@
 
     <nav class="nav-tabs">
         <ul>
-            <li><a href="GroepPagina.php">Home</a></li>
             <li><a href="GroepSelectie.php">Selecteer Familie</a></li>
-            <li><a href="FamilieLeden.php">Familie Leden</a></li>
+            <li><a href="GroepPagina.php">Familie Pagina</a></li>
+            <li><a href="AlleEvents.php">Evenementen</a></li>
             <li><a href="#">Voeg Mensen Toe</a></li>
         </ul>
     </nav>
@@ -52,57 +63,84 @@
     </div> <!-- einde row -->
     
     <div class="row" id="titels">
-   		<div class="half">
-        <h3>Aanbevelingen voor de familie</h3>
-        <img src="img/kickx.jpg"/>
-        <p>Klik <a href="#">hier</a> voor meer info</p>
-        </div>
+    
+    	<div class="half" id="voorstel">
         
-        <div class="half">
+        <h3>Voorstellen</h3>
+        
+           <div id="meerInfo">
+           
+            <form action="">
+            <select name="aanwezig">
+                <option value="ja">Ja, ik wil gaan!</option>
+                <option value="nee">Nee, ik wil niet gaan.</option>
+                <option value="misschien">Ik weet het nog niet.</option>
+            </select>
+            </form>
+            
+            <p name="info">	 City Kickx
+            <br> Turnhout 
+            <br> 27/04/2013 
+            <br> <a href="#">Meer Info</a>
+            </p>
+            
+            <br>
+            <p><b>Sebastiaan</a></b> en <b>Matthias</b> willen gaan!<br>
+            <b>Philippe</b> wil niet gaan.<br>
+            <b>Kristin</b> weet het nog niet.
+            </p>
+            
+            <button class="btn">Voeg toe aan Kalender</button>
+    
+           </div><!-- einde meerInfo -->
+           
+           <div id="meerInfo">
+           
+            <form action="">
+            <select name="aanwezig">
+                <option value="ja">Ja, ik wil gaan!</option>
+                <option value="nee">Nee, ik wil niet gaan.</option>
+                <option value="misschien">Ik weet het nog niet.</option>
+            </select>
+            </form>
+            
+            <p>	 Iron Man 3
+            <br> Bree 
+            <br> 25/05/2013 
+            <br>
+            <a href="http://localhost:78/cultuurnet/DetailEvents.php?id=8837fa77-cecc-4dc4-92cb-bb998edda429">Meer Info</a>
+            </p>
+            
+            <br>
+            <p><b>Sebastiaan</b> wil gaan!<br>
+            </p>
+            
+            <button onclick="addKalender()" class="btn">Voeg toe aan Kalender</button>
+    
+           </div><!-- einde meerInfo -->           
+     	</div> <!-- einde half -->
+        
+		<div class="half">
         	<span class="btn-group">
-            <p>Zoeken naar Evenementen</p>
+            <p class="bold">Zoeken naar Evenementen</p>
     		<input type="text" name="foo" class="input-search" />
    			<button class="btn btn-round">Zoek</button>
             <br>
             <br>
             <br>
-            <br>
-            <input type="button" class="btn" value="Alle Evenementen weergeven" onclick="location.href='AlleEvents.php'"/>
 			</span>
-        </div>
-    </div> <!-- einde row -->    
-    
-    <div class="row" id="titels">
-    
-    	<div class="half">
-        
-        <h3>Voorstellen</h3>
-        
-        <img src="img/kickx.jpg"/>
-        
-            <div id="meerInfo">
-            <p>	Voorgesteld door Sebastiaan </p>
-           
-            <p>Klik <a href="#">hier</a> voor meer info</p>
-            <button class="btn">Aanwezig</button>  
             <br>
             <br>
-            
-            <p>Hoera, 4 familieleden willen gaan!
             <br>
-            Jammer, 2 familieleden willen niet gaan.</p>
+            <p class="bold">Kalender (klik op de evenementen voor meer info)</p>
+            	<ul>
+                    <li>Mano Mundo</li>
+                	<li>
+                    <a href="http://localhost:78/cultuurnet/DetailEvents.php?id=8837fa77-cecc-4dc4-92cb-bb998edda429" 
+                    id="add">
+                    </a></li>
+                </ul>
             
-            <button class="btn">Voeg toe aan Kalender</button>
-    
-            
-            </div><!-- einde meerInfo -->
-        
-     	</div> <!-- einde half -->
-        
-        <div class="half">
-        <p>Kalender</p>
-        <li>27/04 Test Event</li>
-        <li>06/05 Test Eventje</li>
         </div> <!-- einde half -->
         
     </div><!-- einde row-->

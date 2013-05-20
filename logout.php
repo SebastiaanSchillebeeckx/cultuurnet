@@ -3,10 +3,18 @@ http://artatm.com/2012/08/tutorial-integrate-database-based-facebook-connect-to-
 -->
 
 <?php
+/*session_start();
 unset($_SESSION['user']); 
 unset($_SESSION['fb_{142048125978994}_code']); 
 unset($_SESSION['fb_{142048125978994}_access_token']); 
-unset($_SESSION['fb_{142048125978994}_user_id']); 
+unset($_SESSION['fb_{142048125978994}_user_id']);
 header("Location:index.php"); 
-exit();
+exit();*/
+?>
+
+
+<?php 
+session_start();
+session_destroy();
+header("Location:index.php"); 
 ?>

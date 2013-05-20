@@ -5,8 +5,8 @@ http://artatm.com/2012/08/tutorial-integrate-database-based-facebook-connect-to-
 <?php
 
 	session_start();
-	include 		"fbLogin/fbConnection/common.php";
-	include_once 	"fbLogin/fbConnection/fbconnect.php";
+	include 		"Login/fbConnection/common.php";
+	include_once 	"Login/fbConnection/fbconnect.php";
 	
 ?>
 <!doctype html>
@@ -18,7 +18,7 @@ http://artatm.com/2012/08/tutorial-integrate-database-based-facebook-connect-to-
     <link rel="stylesheet" href="css/master.css" media="all">	
     <link rel="stylesheet" href="css/kube.min.css" media="all">
     <link rel="stylesheet" href="css/kube.css" media="all">
-    <link rel="stylesheet" href="css/kuk.css" media="all">
+    <link rel="stylesheet" href="css/screenIn.css" media="all">
 
 </head>
 
@@ -27,13 +27,24 @@ http://artatm.com/2012/08/tutorial-integrate-database-based-facebook-connect-to-
 	<?php include_once("include_header.php") ?>
 
 
-	<?php				
-       		if (isset($_SESSION['user'])) echo '<a href="logout.php">Logout</h5></a>';
-        	else echo '<div class="aanmelden">
-			<h2>Welkom op de Familie Uit ID!</h2>
-			<a href="' . $loginUrl . '">Meld je aan met Facebook</a>'
-			.'</div>';
-	?>
+
+    <div class="afbeelding">
+        <div class="aanmelden">
+			<?php				
+                    if (isset($_SESSION['user'])) echo '<a class="afKnop" href="logout.php">Logout</h5></a>';
+                    else echo 
+                    '<h2>Welkom op de Familie Uit ID!</h2>
+                    <p>Meld je aan met:</p>
+                    <a class="fbKnop" href="' . $loginUrl . '">Facebook</a>';
+            ?>
+                    <br>
+                    <br>
+                    <a class="mailKnop" href="#">Email</a>
+                    <br>
+                    <br>
+                    <p>Nog geen account? Registreer jezelf <a class="hierKnop" href="#">hier</a> !</p>
+        </div>
+    </div>
     
 	<?php 
 			if(!isset($_SESSION['user'])) { ?>
@@ -48,23 +59,7 @@ http://artatm.com/2012/08/tutorial-integrate-database-based-facebook-connect-to-
         $res = mysql_query($query) or die('Query failed: ' . mysql_error() . "<br />\n$sql");
         $row = mysql_fetch_array($res);
 	?> </div>
-    
-    
-	<h1><?php echo($row['name']);?></h1>
-    
-    <?php if(isset($_SESSION['id'])) { ?>
-        	<img src="https://graph.facebook.com/<?php echo $_SESSION['id']; ?>/picture?type=large"/>
-	<?php } ?>
 
-
-	<?php
-       // echo "<b>   GENDER : </b>" . $row['gender'];
-       // echo "<br/><b>   EMAIL : </b>" . $row['email'];
-	   
-	  // echo "<br>" . $row['gender'];
-	  echo "<br>" . $row['email'];
-	?>			
-        
 	<?php } ?>	
     
     <div class="row" id="homeTekst">
@@ -77,7 +72,7 @@ http://artatm.com/2012/08/tutorial-integrate-database-based-facebook-connect-to-
         
     	<div class="third">
         <h3>Hoe werkt het?</h3>
-        <p>Nadat je jezelf hebt aangemeldt met je Facebook account kan je een groep aanmaken. Je kan mensen uitnodigen om lid
+        <p>Nadat je jezelf hebt aangemeld met je Facebook account kan je een groep aanmaken. Je kan mensen uitnodigen om lid
         te worden van je groep en zo je eigen culturele familie creëren. Alle evenementen komen uit de CultuurNet Databank,
         deze databank is rijk gevuld met evenementen. Via een zoekveld kan je zelfs specifieke zoekopdrachten
         uitvoeren.
@@ -88,10 +83,8 @@ http://artatm.com/2012/08/tutorial-integrate-database-based-facebook-connect-to-
         <p>Deze tijd is er een overbod aan informatie en daardoor is het moeilijk om de juiste informatie te vinden, via deze 
         webapplicatie vind je de juiste informatie terug over alle evenementen die je wilt bezoeken. Je kan ook op een
         eenvoudige en interactieve manier communiceren met je Familie omtrent het bezoeken van evenementen.
-        Je kan een evenement voorstellen en vervolgens kan de rest van de Familie mee beslissen of er naar het evenement
-        wordt gegaan of niet.
         </div>
-    </div>
+    </div> <!-- einde row -->
     
 </body>
 </html>

@@ -1,63 +1,79 @@
 <?php
 
-	
+	session_start();
+	include 		"Login/fbConnection/common.php";
+	include_once 	"Login/fbConnection/fbconnect.php";
 
+	require_once 	"config/config.php";
+
+	// Via deze query roepen we de groepsnaam op uit de database
+	$query = "SELECT CONCAT(groepnaam) 
+	AS name FROM groepen";
+	$result = @mysql_query ($query);
+	
 	$url = "http://build.uitdatabank.be/api/events/search?key=AEBA59E1-F80E-4EE2-AE7E-CEDD6A589CA9&format=json";
 	
 	$events = json_decode(file_get_contents($url)); 
 	//haal alle info van de url, goedkope hosting weigeren dat soms, bang voor hacking
 	//zit json in die url, we moeten daar een array van maken, dmv json_decode
 	
-	
-
-
 ?>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Alle Events</title>
+<title>Familie Uit ID - Alle Evenementen</title>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
-    <link rel="stylesheet" href="css/kuk.css" media="all">
-	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+    
+	<link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="css/master.css" media="all">	
+    <link rel="stylesheet" href="css/kube.min.css" media="all">
+    <link rel="stylesheet" href="css/kube.css" media="all">
+    <link rel="stylesheet" href="css/scoirm.css" media="all">
     
 </head>
 
 <body>
 
-	<div data-role="page">
+	<?php include_once("include_header.php") ?>
     
-    	<div data-role="header">
-		<h1>Alle Events</h1>
-		</div><!-- /header -->
-    
-    	<div data-role="content">	
+  	<?php include_once ("include_gebruikerInfo.php") ?>
 
+    <nav class="nav-tabs">
+        <ul>
+            <li><a href="GroepSelectie.php">Selecteer Familie</a></li>
+            <li><a href="GroepPagina.php">Familie Pagina</a></li>
+            <li><a href="AlleEvents.php">Evenementen</a></li>
+            <li><a href="#">Voeg Mensen Toe</a></li>
+        </ul>
+    </nav>
 
+	<div id="lijstEvents">
     
-    	<ul data-role="listview">
+    	<div>
+		<h1>Alle Evenementen</h1>
+        <br>
+		</div><!-- header -->
+    
+    	<div id="contentEvents">	
+    	<ul>
 		<?php
 		//lijst met titels laten zien via deze for each lus
 		foreach($events as $e)
 		{
-			echo "<li><a href='DetailEvents.php?id=" . $e->cdbid . "'>" . $e->title . "<i> in </i>" .
-			 "<i>" . $e->city . "</i>" . " in de categorie:<i>" . $e->heading . "</i>" . "</a></li>"; 
+			echo 
+			"<li>" . $e->title . "<br>" .
+			 "<i>" . $e->city . "</i>" . "<br>" . $e->calendarsummary . "<br><br>" . $e->heading . "</i>" . 
+			 "<a href='DetailEvents.php?id=" . $e->cdbid . "'>Meer Info</a>" . 
+			 "</li><br>"; 
 			// hier zorgen we ervoor dat de lijst titels, links worden, we linken naar de cultuur db id
 		}
 		?>
     	</ul>
+		</div><!-- contentEvents -->
 
+    </div><!-- einde lijstEvents -->
 
-		</div><!-- /content -->
-
-    </div><!-- /page -->
-
-
-
-    
-    
 </body>
 </html>

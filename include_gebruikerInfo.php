@@ -2,14 +2,14 @@
     <link rel="stylesheet" href="css/master.css" media="all">	
     <link rel="stylesheet" href="css/kube.min.css" media="all">
     <link rel="stylesheet" href="css/kube.css" media="all">
-    <link rel="stylesheet" href="css/kuk.css" media="all">
+    <link rel="stylesheet" href="css/scoirm.css" media="all">
     
 	<div class="gebruikersInfo">
     <?php				
        		if (isset($_SESSION['user'])) 
 			echo 
 			'<div class="afmelden">
-			<a href="logout.php">Logout</h5></a>
+			<a class="afKnop" href="logout.php">afmelden</a>
 			</div>';
         	else echo '<a href="' . $loginUrl . '">Meld je aan met Facebook</a>';
 	?>
