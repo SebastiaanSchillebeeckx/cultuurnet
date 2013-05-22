@@ -4,11 +4,12 @@
 <meta charset="utf-8">
 <title>Familie Uit ID - Groep Maken</title>
 
+	<link rel="shortcut icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="css/master.css" media="all">	
     <link rel="stylesheet" href="css/kube.min.css" media="all">
     <link rel="stylesheet" href="css/kube.css" media="all">
 	<link rel="stylesheet" href="css/search.css" type="text/css" />
-    <link rel="stylesheet" href="css/scoirm.css" media="all">
+    <link rel="stylesheet" href="css/scihjkhgrm.css" media="all">
     
     <script type="text/javascript" src="liveSearch/custom.js"></script>
 

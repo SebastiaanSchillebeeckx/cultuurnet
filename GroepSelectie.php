@@ -36,7 +36,7 @@ include_once("config/config.php");
     <link rel="stylesheet" href="css/master.css" media="all">	
     <link rel="stylesheet" href="css/kube.min.css" media="all">
     <link rel="stylesheet" href="css/kube.css" media="all">
-    <link rel="stylesheet" href="css/scoirm.css" media="all">
+    <link rel="stylesheet" href="css/scihjkhgrm.css" media="all">
 
 </head>
 

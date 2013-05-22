@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="css/master.css" media="all">	
     <link rel="stylesheet" href="css/kube.min.css" media="all">
     <link rel="stylesheet" href="css/kube.css" media="all">
-    <link rel="stylesheet" href="css/scoirm.css" media="all">
+    <link rel="stylesheet" href="css/scihjkhgrm.css" media="all">
     
 </head>
 
@@ -45,6 +45,7 @@
             <li><a href="GroepSelectie.php">Selecteer Familie</a></li>
             <li><a href="GroepPagina.php">Familie Pagina</a></li>
             <li><a href="AlleEvents.php">Evenementen</a></li>
+            <li><a href="FamilieLeden.php">Familie Leden</a></li>
             <li><a href="#">Voeg Mensen Toe</a></li>
         </ul>
     </nav>

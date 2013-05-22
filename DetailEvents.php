@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="css/master.css" media="all">	
     <link rel="stylesheet" href="css/kube.min.css" media="all">
     <link rel="stylesheet" href="css/kube.css" media="all">
-    <link rel="stylesheet" href="css/scoirm.css" media="all">
+    <link rel="stylesheet" href="css/scihjkhgrm.css" media="all">
     
 </head>
 
@@ -52,6 +52,7 @@
                 <li><a href="GroepSelectie.php">Selecteer Familie</a></li>
                 <li><a href="GroepPagina.php">Familie Pagina</a></li>
                 <li><a href="AlleEvents.php">Evenementen</a></li>
+            	<li><a href="FamilieLeden.php">Familie Leden</a></li>
                 <li><a href="#">Voeg Mensen Toe</a></li>
             </ul>
         </nav>
@@ -62,7 +63,7 @@
         
                 
                 <div id="detailEvents">	
-       			<a href="AlleEvents.php"> &lsaquo; Terug naar alle events</a>
+       			<a href="AlleEvents.php"> &lsaquo; Terug naar alle evenementen</a>
                 <br>
                 <br>
                 <!-- laat titel en beschrijving zien -->
@@ -87,7 +88,8 @@
                 <p><?php echo $event->event->eventdetails->eventdetail->calendarsummary; ?></p>
 
                 <!--afbeelding laten zien -->
-                <?php $images = $event->event->eventdetails->eventdetail->media->file; 
+                <?php 
+				$images = $event->event->eventdetails->eventdetail->media->file; 
                 foreach($images as $image)
                 {
                     if($image->mediatype == "photo")

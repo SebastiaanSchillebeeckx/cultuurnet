@@ -15,10 +15,11 @@ http://artatm.com/2012/08/tutorial-integrate-database-based-facebook-connect-to-
 <meta charset="utf-8">
 <title>Familie Uit ID - Aanmelden</title>
 
+	<link rel="shortcut icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="css/master.css" media="all">	
     <link rel="stylesheet" href="css/kube.min.css" media="all">
     <link rel="stylesheet" href="css/kube.css" media="all">
-    <link rel="stylesheet" href="css/screenIn.css" media="all">
+    <link rel="stylesheet" href="css/screenI.css" media="all">
 
 </head>
 
@@ -39,10 +40,7 @@ http://artatm.com/2012/08/tutorial-integrate-database-based-facebook-connect-to-
             ?>
                     <br>
                     <br>
-                    <a class="mailKnop" href="#">Email</a>
                     <br>
-                    <br>
-                    <p>Nog geen account? Registreer jezelf <a class="hierKnop" href="#">hier</a> !</p>
         </div>
     </div>
     
